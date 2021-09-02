@@ -57,6 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Script\Movement.cs" />
+    <Compile Include="Assets\Script\UI\HealthBar.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\FixedJoystick.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\VariableJoystick.cs" />
     <Compile Include="Assets\Script\Enemy\MovementEnemy.cs" />
@@ -76,6 +77,7 @@
     <Compile Include="Assets\Script\Player\MovementPlayer.cs" />
     <Compile Include="Assets\Script\Joystic\FloatingJoystick.cs" />
     <Compile Include="Assets\Script\Interface\IMoveControll.cs" />
+    <Compile Include="Assets\Script\BillBoard.cs" />
     <Compile Include="Assets\Script\Interface\IMove.cs" />
   </ItemGroup>
   <ItemGroup>

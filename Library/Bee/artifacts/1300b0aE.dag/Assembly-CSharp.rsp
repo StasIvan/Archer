@@ -330,6 +330,7 @@
 "Assets/Joystick Pack/Scripts/Joysticks/DynamicJoystick.cs"
 "Assets/Joystick Pack/Scripts/Joysticks/FixedJoystick.cs"
 "Assets/Joystick Pack/Scripts/Joysticks/VariableJoystick.cs"
+"Assets/Script/BillBoard.cs"
 "Assets/Script/Bullet.cs"
 "Assets/Script/Character.cs"
 "Assets/Script/Enemy/Enemy.cs"
@@ -346,6 +347,7 @@
 "Assets/Script/Movement.cs"
 "Assets/Script/Player/MovementPlayer.cs"
 "Assets/Script/Player/Player.cs"
+"Assets/Script/UI/HealthBar.cs"
 -langversion:8.0
 
 /deterministic
