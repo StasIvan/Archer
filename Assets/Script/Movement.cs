@@ -15,6 +15,11 @@ public class Movement : MonoBehaviour, IMove, IMoveControll, IRotation
         character.Move(direction * speed * Time.deltaTime);
     }
 
+    public void Move(Transform character, Vector3 direction, float speed)
+    {
+        character.Translate(direction * speed * Time.deltaTime, Space.World);
+    }
+
     public void Move(NavMeshAgent agent, Vector3 destination)
     {
         agent.SetDestination(destination);

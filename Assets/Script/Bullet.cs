@@ -7,7 +7,7 @@ public class Bullet : MonoBehaviour
     [SerializeField] float _damage;
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Character"))
+        if (other.gameObject.CompareTag(StringContainer.character))
         {
             other.gameObject.GetComponent<Character>().DamageCharacter(_damage);
         }
