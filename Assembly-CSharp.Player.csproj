@@ -53,31 +53,33 @@
     <UnityVersion>2020.3.16f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Assets\Script\Movement.cs" />
-    <Compile Include="Assets\Script\UI\HealthBar.cs" />
+    <Compile Include="Assets\Script\Base\Movement.cs" />
+    <Compile Include="Assets\Script\Base\UI\HealthBar.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\FixedJoystick.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\VariableJoystick.cs" />
-    <Compile Include="Assets\Script\Enemy\MovementEnemy.cs" />
-    <Compile Include="Assets\Script\Enemy\Enemy.cs" />
-    <Compile Include="Assets\Script\Bullet.cs" />
-    <Compile Include="Assets\Script\Menu\SettingsMenu.cs" />
-    <Compile Include="Assets\Script\Interface\IRotation.cs" />
-    <Compile Include="Assets\Script\Interface\IDamage.cs" />
+    <Compile Include="Assets\Script\Base\Enemy\MovementEnemy.cs" />
+    <Compile Include="Assets\Script\Base\Enemy\Enemy.cs" />
+    <Compile Include="Assets\Script\Base\Bullet.cs" />
+    <Compile Include="Assets\Script\Base\Menu\SettingsMenu.cs" />
+    <Compile Include="Assets\Script\Base\Interface\IRotation.cs" />
+    <Compile Include="Assets\Script\Base\Interface\IDamage.cs" />
     <Compile Include="Assets\Joystick Pack\Examples\JoystickPlayerExample.cs" />
-    <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\DynamicJoystick.cs" />
-    <Compile Include="Assets\Script\Joystic\Joystick.cs" />
-    <Compile Include="Assets\Script\Character.cs" />
-    <Compile Include="Assets\Script\Player\Player.cs" />
-    <Compile Include="Assets\Script\Menu\Menu.cs" />
-    <Compile Include="Assets\Joystick Pack\Examples\JoystickSetterExample.cs" />
-    <Compile Include="Assets\Script\Menu\MainMenu.cs" />
-    <Compile Include="Assets\Script\Player\MovementPlayer.cs" />
-    <Compile Include="Assets\Script\Joystic\FloatingJoystick.cs" />
-    <Compile Include="Assets\Script\Interface\IMoveControll.cs" />
-    <Compile Include="Assets\Script\BillBoard.cs" />
-    <Compile Include="Assets\Script\Interface\IMove.cs" />
     <Compile Include="Assets\Script\StringContainer.cs" />
+    <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\DynamicJoystick.cs" />
+    <Compile Include="Assets\Script\Base\Joystic\Joystick.cs" />
+    <Compile Include="Assets\Script\Base\Character.cs" />
+    <Compile Include="Assets\Script\Base\Player\Player.cs" />
     <Compile Include="Assets\Script\MonoSingleton.cs" />
+    <Compile Include="Assets\Script\Base\Menu\Menu.cs" />
+    <Compile Include="Assets\Joystick Pack\Examples\JoystickSetterExample.cs" />
+    <Compile Include="Assets\Script\Base\Menu\MainMenu.cs" />
+    <Compile Include="Assets\Script\Base\Player\MovementPlayer.cs" />
+    <Compile Include="Assets\Script\Base\Joystic\FloatingJoystick.cs" />
+    <Compile Include="Assets\Script\Base\Interface\IMoveControll.cs" />
+    <Compile Include="Assets\Script\Base\BillBoard.cs" />
+    <Compile Include="Assets\Script\Base\Interface\IMove.cs" />
+    <Compile Include="Assets\Script\Base\UI\InputUI.cs" />
+    <Compile Include="Assets\Script\Extensions.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
@@ -293,6 +295,9 @@
     <Reference Include="VSSettingsProvider">
       <HintPath>Library\ScriptAssemblies\VSSettingsProvider.dll</HintPath>
     </Reference>
+    <Reference Include="CustomToolbar.Editor">
+      <HintPath>Library\ScriptAssemblies\CustomToolbar.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEditor.UI">
       <HintPath>Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
     </Reference>
@@ -301,9 +306,6 @@
     </Reference>
     <Reference Include="Unity.PlasticSCM.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="CustomToolbar.Editor">
-      <HintPath>Library\ScriptAssemblies\CustomToolbar.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>Library\PackageCache\com.unity.nuget.newtonsoft-json@2.0.0\Runtime\AOT\Newtonsoft.Json.dll</HintPath>
