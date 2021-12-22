@@ -6,7 +6,7 @@ public class InputUI : MonoBehaviour
 {
     [SerializeField] private Joystick _joystick;
 
-    private void Awake()
+    private void Start()
     {
         _joystick.SetActive();
     }

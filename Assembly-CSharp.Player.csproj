@@ -80,6 +80,7 @@
     <Compile Include="Assets\Script\Base\Interface\IMove.cs" />
     <Compile Include="Assets\Script\Base\UI\InputUI.cs" />
     <Compile Include="Assets\Script\Extensions.cs" />
+    <Compile Include="Assets\Script\Base\TargetSearch.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

@@ -31,8 +31,8 @@ public class Joystick : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoint
 
     [SerializeField] protected RectTransform background = null;
     [SerializeField] private RectTransform handle = null;
-    private RectTransform baseRect = null;
     private RectTransform joystic = null;
+    private RectTransform baseRect = null;
     private Canvas canvas;
     private Camera cam;
 
@@ -48,18 +48,25 @@ public class Joystick : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoint
             Debug.LogError("The Joystick is not placed inside a canvas");
         Vector2 center = new Vector2(0.5f, 0.5f);
         background.pivot = center;
-        
+        background.anchorMin = center;
+        background.anchorMax = center;
         handle.anchorMin = center;
         handle.anchorMax = center;
         handle.pivot = center;
         handle.anchoredPosition = Vector2.zero;
         joystic = GameObject.Find("Joystic").GetComponent<RectTransform>();
+        //joystic.rect.size.Set(Screen.width, Screen.height);
+        //float screenSizeDelta = joystic.rect.size.x + joystic.rect.size.y;
+        //background.sizeDelta = new Vector2(screenSizeDelta / 10, screenSizeDelta / 10);
+        //handle.sizeDelta = new Vector2(screenSizeDelta / 20, screenSizeDelta / 20);
+        //joystic.offsetMax = new Vector2(0,0);
     }
     
     void JoysticSize()
     {
         joystic.gameObject.transform.position = canvas.gameObject.transform.position;
         joystic.sizeDelta = new Vector2(Screen.currentResolution.width, Screen.currentResolution.height);
+        //joystic.sizeDelta = canvas.renderingDisplaySize;
         if (joystic != null) 
         {
             float screenSizeDelta = joystic.sizeDelta.x + joystic.sizeDelta.y;
@@ -71,7 +78,7 @@ public class Joystick : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoint
 
     private void Update()
     {
-        JoysticSize();
+        //JoysticSize();
     }
 
     public virtual void OnPointerDown(PointerEventData eventData)

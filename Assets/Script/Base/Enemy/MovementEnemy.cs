@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-[RequireComponent(typeof(Movement))]
 [DisallowMultipleComponent]
 public class MovementEnemy : Movement
 {

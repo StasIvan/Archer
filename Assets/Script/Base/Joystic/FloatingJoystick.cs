@@ -3,6 +3,7 @@
 public class FloatingJoystick : Joystick
 {
     public static FloatingJoystick joystick { get; private set; }
+    private UnityEngine.Vector3 _defaultPosition = new UnityEngine.Vector3(0, -500);
 
     private void Awake()
     {
@@ -15,22 +16,24 @@ public class FloatingJoystick : Joystick
             joystick = this;
         }
     }
+
     protected override void Start()
     {
         base.Start();
-        background.gameObject.SetActive(false);
+        background.SetActive();
     }
 
     public override void OnPointerDown(PointerEventData eventData)
     {
         background.anchoredPosition = ScreenPointToAnchoredPosition(eventData.position);
-        background.gameObject.SetActive(true);
+        //background.SetActive();
         base.OnPointerDown(eventData);
     }
 
     public override void OnPointerUp(PointerEventData eventData)
     {
-        background.gameObject.SetActive(false);
+        //background.SetInactive();
+        background.localPosition = _defaultPosition;
         base.OnPointerUp(eventData);
     }
 }
