@@ -21,4 +21,14 @@ public static partial class Extensions
 	{
 		gameObject.SetActive(true);
 	}
+
+	public static void SetParent(this GameObject gameObject, Transform parentTransform)
+    {
+		gameObject.transform.SetParent(parentTransform);
+    }
+
+	public static void SetParent(this GameObject gameObject, GameObject parentGameObject)
+	{
+		gameObject.transform.SetParent(parentGameObject.transform);
+	}
 }

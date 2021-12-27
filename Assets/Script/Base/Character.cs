@@ -5,12 +5,10 @@ using System;
 
 public class Character : MonoBehaviour, IDamage
 {
-    [SerializeField] private float _currentHP;
-    [SerializeField] private float _startHP;
-    [SerializeField] private float _maxHP;
+    [SerializeField] private float _currentHP, _startHP, _maxHP;
     [SerializeField] private HealthBar _healthBarPrefab;
 
-    public Transform thisTransform;
+    [HideInInspector] public Transform thisTransform;
     public event Action<float> currentHP;
 
     private HealthBar _healthBar;
@@ -49,6 +47,7 @@ public class Character : MonoBehaviour, IDamage
     public void DamageCharacter(float damage)
     {
         _currentHP -= damage;
+        _currentHP = Mathf.Clamp(_currentHP, 0f, _maxHP);
         StartCoroutine(FlickerCharacter());
         currentHP?.Invoke(_currentHP);
     }
