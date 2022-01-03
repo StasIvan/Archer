@@ -1,11 +1,13 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class TargetSearch : MonoBehaviour
 {
-    [SerializeField] private SphereCollider _searchSphere;
-    [SerializeField] private Transform _tartget = null;
+    public Action<Transform> SetTargetEvent;
+
+    private SphereCollider _searchSphere;
     private Coroutine _searchTargetCoroutine;
 
     private void Start()
@@ -16,7 +18,7 @@ public class TargetSearch : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        _tartget = other.transform;
+        SetTargetEvent?.Invoke(other.transform);
         //if (_searchTargetCoroutine != null)
         //{
         //    StopCoroutine(_searchTargetCoroutine);

@@ -19,7 +19,7 @@ GameObject:
   - component: {fileID: 7914331064277704248}
   m_Layer: 6
   m_Name: Player
-  m_TagString: Character
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -179,6 +179,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db43f031faf6211499da79db34d364b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bullet: {fileID: 1393893475315839334, guid: f1842d2f46fd5724893bd2e8471216f3, type: 3}
+  _targetSearch: {fileID: 6667789935726929249}
+  _reloadTime: 1
+  thisTransform: {fileID: 0}
 --- !u!1 &496428044451398594
 GameObject:
   m_ObjectHideFlags: 0
@@ -428,5 +432,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f832c699a4245149a50693fc20fc731, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _searchSphere: {fileID: 0}
-  _tartget: {fileID: 0}

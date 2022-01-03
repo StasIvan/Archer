@@ -19,7 +19,19 @@ public class PoolManager : MonoSingleton<PoolManager>
                 GameObject poolObject = Instantiate(prefab);
                 poolDictionary[instanceID].Enqueue(poolObject);
                 poolObject.SetParent(pool);
+                poolObject.GetComponent<PoolObject>().SetPoolParent(pool.transform);
             }
+        }
+    }
+
+    public void ReuseObject<T>(T prefab) where T : PoolObject
+    {
+        int poolKey = prefab.gameObject.GetInstanceID();
+        if (poolDictionary.ContainsKey(poolKey))
+        {
+            GameObject objectToReuse = poolDictionary[poolKey].Dequeue();
+            poolDictionary[poolKey].Enqueue(objectToReuse);
+            objectToReuse.GetComponent<PoolObject>().OnObjectReuse();
         }
     }
 

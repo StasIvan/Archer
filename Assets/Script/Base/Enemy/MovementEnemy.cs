@@ -6,17 +6,15 @@ using UnityEngine.AI;
 [DisallowMultipleComponent]
 public class MovementEnemy : Movement
 {
-    private Transform thisTransform;
+    [HideInInspector] public Transform thisTransform;
+
     private NavMeshAgent _agent;
     private Coroutine _moveCoroutine;
     private Vector3 _destination;
     
     private void Start()
     {
-        _agent = GetComponent<NavMeshAgent>();
-        thisTransform = transform;
-        StartCoroutine(WanderRoutine());
-
+        Init();
     }
     
     public IEnumerator WanderRoutine()
@@ -33,9 +31,18 @@ public class MovementEnemy : Movement
         }
     }
 
-    void ChooseNewEndpoint()
+    private void ChooseNewEndpoint()
     {
         _destination = new Vector3(Random.Range(thisTransform.position.x - 10, thisTransform.position.x + 10), 0, 
             Random.Range(thisTransform.position.z - 10, thisTransform.position.z + 10));
     }
+
+    private void Init()
+    {
+        _agent = GetComponent<NavMeshAgent>();
+        thisTransform = transform;
+        StartCoroutine(WanderRoutine());
+        SetPreviousPos(thisTransform);
+    }
+
 }

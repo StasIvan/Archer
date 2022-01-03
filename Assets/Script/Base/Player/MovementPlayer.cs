@@ -9,6 +9,7 @@ public class MovementPlayer : Movement
     private void Start()
     {
         thisTransform = transform;
+        SetPreviousPos(thisTransform);
     }
 
     private void Update()

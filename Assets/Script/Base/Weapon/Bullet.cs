@@ -5,13 +5,29 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     [SerializeField] private float _damage;
+    private PoolObject _poolObject;
+
+    private void Start()
+    {
+        _poolObject = gameObject.GetComponent<PoolObject>();
+    }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag(StringContainer.character))
+        var triggerObject = other.gameObject.GetComponent<Character>();
+        if (triggerObject != null && other.gameObject.tag != gameObject.tag)
         {
             other.gameObject.GetComponent<Character>().DamageCharacter(_damage);
         }
-        this.SetInactive();
+        if (_poolObject != null)
+        {
+            _poolObject.Destroy();
+        }
+        else
+        {
+            this.SetInactive();
+        }
     }
+
+
 }

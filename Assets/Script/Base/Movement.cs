@@ -5,6 +5,16 @@ using UnityEngine.AI;
 
 public class Movement : MonoBehaviour, IMove, IMoveControll, IRotation
 {
+    protected Vector3 _previousPos;
+    
+
+    public bool IsObjectMove(Transform currentTrans)
+    {
+        bool isMove = _previousPos != currentTrans.position;
+        SetPreviousPos(currentTrans);
+        return isMove;
+    }
+
     public void LookAtDirection(Transform thisTransform, Vector3 direction)
     {
         thisTransform.rotation = Quaternion.LookRotation(direction);
@@ -49,6 +59,10 @@ public class Movement : MonoBehaviour, IMove, IMoveControll, IRotation
         
     }
 
+    protected void SetPreviousPos(Transform transform)
+    {
+        _previousPos = transform.position;
+    }
     /*public void Move(Rigidbody rb, Vector3 direction, float speed)
     {
         rb.AddForce(direction * speed * Time.fixedDeltaTime);
